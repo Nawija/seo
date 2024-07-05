@@ -24,8 +24,10 @@ export default function Nav() {
                 />
                 <ul
                     className={`${
-                        showMenu ? "translate-x-0" : " translate-x-full"
-                    } absolute transition-transform top-full left-0 space-y-4 p-10 w-full flex items-center justify-center flex-col bg-background-primary`}
+                        showMenu
+                            ? "translate-x-0"
+                            : " translate-x-full lg:translate-x-0"
+                    } absolute lg:static transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:p-0 w-full flex items-center justify-center flex-col lg:flex-row bg-background-primary`}
                 >
                     {NAVIGATION_LINKS.map((link, index) => (
                         <li key={index}>
@@ -54,7 +56,7 @@ function BurgerMenu({
     return (
         <button
             onClick={handleShowMenu}
-            className="flex flex-col items-start justify-center space-y-1.5"
+            className="flex flex-col items-start justify-center space-y-1.5 lg:hidden"
         >
             <div
                 className={`${
