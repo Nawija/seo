@@ -1,5 +1,7 @@
 export default function Home() {
-  return (
-    <div></div>
-  );
+    return (
+        <div className="wrapper">
+            <section>xxx</section>
+        </div>
+    );
 }
