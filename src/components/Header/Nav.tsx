@@ -15,7 +15,7 @@ export default function Nav() {
         setShowMenu(false);
     }
     return (
-        <header className="w-full bg-background-primary relative">
+        <header className="w-full z-[998] bg-background-primary relative">
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
                 <Logo closeMenu={closeMenu} h={25} w={25} />
                 <BurgerMenu

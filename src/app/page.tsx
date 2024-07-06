@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function Home() {
     return (
         <div className="">
-            <section className="wrapper py-20 relative flex flex-col lg:flex-row  items-center justify-center">
-                <div className="max-w-screen-sm text-center lg:text-start space-y-8">
-                    <h1 className="text-xl lg:text-4xl font-medium ">
+            <section className="py-12 px-4 relative grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto">
+                <div className="max-w-screen-sm text-center lg:text-start space-y-8 flex flex-col items-center justify-center">
+                    <h1 className="text-xl lg:text-4xl font-bold ">
                         Loredolor sit amet{" "}
                         <span className="text-accent-primary">consectetur</span>{" "}
                         adipisicing soluta ad et modi debitis{" "}
@@ -20,21 +20,32 @@ export default function Home() {
                         qui corporis consequuntur dicta voluptatem quos illo
                         fuga, corrupti velit.
                     </p>
-                    <div className="space-x-4 py-4">
-                      <Link href="/" className="py-2 px-4 border rounded-xl border-foreground-primary font-medium">Show info</Link>
-                      <Link href="/" className="py-2 px-4 border rounded-xl border-accent-primary text-accent-primary font-medium">More</Link>
+                    <div className="space-x-4 py-4 lg:mr-auto">
+                        <Link
+                            href="/"
+                            className="py-2 px-6 border bg-background-primary rounded-xl border-foreground-primary font-medium"
+                        >
+                            Show info
+                        </Link>
+                        <Link
+                            href="/"
+                            className="py-2 px-6 border bg-background-primary rounded-xl border-accent-primary text-accent-primary font-medium"
+                        >
+                            More
+                        </Link>
                     </div>
                 </div>
-                <Lottie
-                    animationData={animationData}
-                    className="flex justify-center items-center"
-                    loop={true}
-                />
+
+                <div className="lg:h-[600px]">
+                    <Lottie
+                        animationData={animationData}
+                        className="flex justify-center items-center w-full h-full"
+                        loop={true}
+                    />
+                </div>
             </section>
             <section className="py-20 bg-background-primary">
-              <div className="wrapper">
-                
-              </div>
+                <div className="wrapper"></div>
             </section>
         </div>
     );
