@@ -46,7 +46,7 @@ export default function Home() {
             </section>
             <section className="py-20 bg-background-primary">
                 <div className="wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                    <div></div>
+                    <div className="p-32 border rounded-xl"></div>
                 </div>
             </section>
         </div>
