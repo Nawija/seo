@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <div className="">
+        <div className="anim-opacity">
             <section className="py-12 px-4 relative grid grid-cols-1 lg:grid-cols-2 max-w-screen-xl mx-auto">
                 <div className="max-w-screen-sm text-center lg:text-start space-y-8 flex flex-col items-center justify-center">
                     <h1 className="text-xl lg:text-4xl font-bold ">
@@ -45,7 +45,9 @@ export default function Home() {
                 </div>
             </section>
             <section className="py-20 bg-background-primary">
-                <div className="wrapper"></div>
+                <div className="wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                    <div></div>
+                </div>
             </section>
         </div>
     );
