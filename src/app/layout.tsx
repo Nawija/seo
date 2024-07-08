@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { roboto } from "@/fonts";
 
 export const metadata: Metadata = {
     title: "Seovileo",
@@ -20,7 +18,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${inter.className} bg-background-secondary flex flex-col min-h-screen text-foreground-primary w-full overflow-x-hidden`}
+                className={`${roboto.className} bg-background-secondary flex flex-col min-h-screen text-foreground-primary w-full overflow-x-hidden`}
             >
                 <Nav />
                 <main className="flex-1">{children}</main>
