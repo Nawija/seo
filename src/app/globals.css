@@ -1,6 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.scroll-container {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.scroll-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.navigation-link {
+    padding: 0 1rem;
+    white-space: nowrap;
+}
+
+/* Kluczowa animacja */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 :root {
     --background-primary: #141414;
@@ -10,13 +36,13 @@
     --foreground-secondary: #bebebe;
 
     --accent-primary: #ffffff;
-    --accent-secondary: #61563C;
+    --accent-secondary: #61563c;
 
     --border-primary: #383737;
     --border-secondary: #383737;
-  }
+}
 
-  /* @layer utilities {.border-color: ;} */
+/* @layer utilities {.border-color: ;} */
 .wrapper {
     max-width: 1536px;
     margin: 0 auto;
