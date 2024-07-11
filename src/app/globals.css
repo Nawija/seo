@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --background-primary: #141414;
+    --background-secondary: #252525;
+
+    --foreground-primary: #ffffff;
+    --foreground-secondary: #bebebe;
+
+    --accent-primary: #ffffff;
+    --accent-secondary: #61563C;
+
+    --border-primary: #383737;
+    --border-secondary: #383737;
+  }
+
+  /* @layer utilities {.border-color: ;} */
 .wrapper {
     max-width: 1536px;
     margin: 0 auto;
@@ -16,12 +31,7 @@
     }
 }
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

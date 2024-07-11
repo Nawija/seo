@@ -18,7 +18,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${roboto.className} bg-background-secondary flex flex-col min-h-screen text-foreground-primary w-full overflow-x-hidden`}
+                className={`${roboto.className} bg-background-primary flex flex-col min-h-screen text-foreground-secondary w-full overflow-x-hidden`}
             >
                 <Nav />
                 <main className="flex-1">{children}</main>

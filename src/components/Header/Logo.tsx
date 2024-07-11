@@ -23,7 +23,7 @@ export default function Logo({
                 height={h || 25}
                 width={w || 25}
             />
-            <p className="text-xs lg:text-sm font-semibold">Seovileo</p>
+            <p className="text-xs lg:text-sm font-semibold text-foreground-primary">Seovileo</p>
         </Link>
     );
 }

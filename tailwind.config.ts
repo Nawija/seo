@@ -10,20 +10,20 @@ const config: Config = {
         extend: {
             colors: {
                 background: {
-                    primary: "#F5F5F5", // jasne tło
-                    secondary: "#E0E0E0", // ciemniejsze tło
+                    primary: `var(--background-primary)`,
+                    secondary: `var(--background-secondary)`,
                 },
                 foreground: {
-                    primary: "#333333", // główny kolor tekstu
-                    secondary: "#4F4F4F", // drugorzędny kolor tekstu
-                },
-                border: {
-                    primary: "#CCCCCC", // główny kolor obramowania
-                    secondary: "#999999", // drugorzędny kolor obramowania
+                    primary: `var(--foreground-primary)`,
+                    secondary: `var(--foreground-secondary)`,
                 },
                 accent: {
-                    primary: "#FF5722", // główny kolor akcentu
-                    secondary: "#FFC107", // drugorzędny kolor akcentu
+                    primary: `var(--accent-primary)`,
+                    secondary: `var(--accent-primary)`,
+                },
+                border: {
+                    primary: `var(--border-primary)`,
+                    secondary: `var(--border-primary)`,
                 },
             },
         },
