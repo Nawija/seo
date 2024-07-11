@@ -3,12 +3,24 @@
 import { NAVIGATION_LINKS } from "@/constants/routers";
 import Logo from "./Logo";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MainBtn } from "../Buttons/MainBtn";
 import { SecondBtn } from "../Buttons/SecondBtn";
 
 export default function Nav() {
     const [showMenu, setShowMenu] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY !== 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     function handleShowMenu() {
         setShowMenu(!showMenu);
@@ -17,9 +29,13 @@ export default function Nav() {
         setShowMenu(false);
     }
     return (
-        <header className="w-full z-[998] bg-background-primary relative">
+        <header
+            className={`w-full z-[998] bg-background-primary border-b  transition-colors duration-300 sticky top-0 ${
+                isScrolled ? "border-border-primary" : "border-transparent"
+            }`}
+        >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
-                <Logo closeMenu={closeMenu} h={25} w={25} />
+                <Logo closeMenu={closeMenu} h={25} w={25}  />
                 <BurgerMenu
                     handleShowMenu={handleShowMenu}
                     showMenu={showMenu}

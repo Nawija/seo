@@ -19,6 +19,7 @@ export default function Home() {
                     <SecondBtn>Wycena</SecondBtn>
                 </div>
                 <AutoCarouselInfoHero />
+                <div className="h-[300vh]" />
             </section>
         </div>
     );
