@@ -1,4 +1,4 @@
-import { PROMOTIONAL_TAGS } from "@/constants/routers";
+import { PROMOTIONAL_TAGS } from "@/constants/promo";
 
 export default function AutoCarouselInfoHero() {
     return (
