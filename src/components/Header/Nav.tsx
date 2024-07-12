@@ -49,7 +49,7 @@ export default function Nav() {
                     className={`${
                         showMenu
                             ? "translate-x-0"
-                            : " translate-x-full lg:translate-x-0"
+                            : " -translate-x-full lg:translate-x-0"
                     } absolute lg:static border-b lg:border-none border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:p-0 w-full flex items-center justify-center flex-col lg:flex-row bg-background-primary`}
                 >
                     {NAVIGATION_LINKS.map((link, index) => (
