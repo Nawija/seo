@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .scroll-container {
     display: flex;
     white-space: nowrap;
@@ -25,17 +26,17 @@
   }
   100% {
       opacity: 0;
-      transform: translateX(-20px);
+      transform: translateX(-10px);
   }
 }
 
 .letter {
   display: inline-block;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .fade-out {
-  animation: fadeOutLeft 0.5s forwards;
+  animation: fadeOutLeft 0.1s forwards;
 }
 
 
@@ -51,7 +52,7 @@
 
 :root {
     --background-primary: #141414;
-    --background-secondary: #252525;
+    --background-secondary: rgb(26, 24, 23);
 
     --foreground-primary: #ffffff;
     --foreground-secondary: #bebebe;

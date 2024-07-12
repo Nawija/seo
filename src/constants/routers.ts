@@ -4,16 +4,20 @@ export const NAVIGATION_LINKS = [
     { name: "contact", href: "/contact" },
 ];
 
-export const NAVIGATION_LINKSS = [
-    { name: "xservices", href: "/services" },
-    { name: "about", href: "/about" },
-    { name: "nextjs", href: "/contact" },
-    { name: "gatsby", href: "/contact" },
-    { name: "hack tools", href: "/contact" },
-    { name: "boty", href: "/contact" },
-    { name: "about", href: "/about" },
-    { name: "nextjs", href: "/contact" },
-    { name: "gatsby", href: "/contact" },
-    { name: "hack tools", href: "/contact" },
-    { name: "jalapenioo", href: "/contact" },
+export const PROMOTIONAL_TAGS = [
+    { name: "Modern Technologies" },
+    { name: "Future Online" },
+    { name: "Unmatched Performance" },
+    { name: "Speed" },
+    { name: "Dynamic Content" },
+    { name: "Responsiveness" },
+    { name: "Lightning Fast" },
+    { name: "New Generation" },
+    { name: "Intuitive Interface" },
+    { name: "Scalability" },
+    { name: "Security" },
+    { name: "Integration" },
+    { name: "Professionalism" },
+    { name: "Personalized Approach" },
+    { name: "Mobility" },
 ];

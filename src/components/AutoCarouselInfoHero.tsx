@@ -1,4 +1,4 @@
-import { NAVIGATION_LINKSS } from "@/constants/routers";
+import { PROMOTIONAL_TAGS } from "@/constants/routers";
 
 export default function AutoCarouselInfoHero() {
     return (
@@ -6,14 +6,14 @@ export default function AutoCarouselInfoHero() {
             <div className="bg-gradient-to-l from-background-primary via-transparent to-background-primary w-full h-full absolute left-0 top-0 z-10" />
             <div className="scroll-container">
                 <div className="scroll-content">
-                    {NAVIGATION_LINKSS.map((link, i) => (
+                    {PROMOTIONAL_TAGS.map((link, i) => (
                         <p key={i} className="navigation-link">
                             {link.name}
                         </p>
                     ))}
-                    {NAVIGATION_LINKSS.map((link, i) => (
+                    {PROMOTIONAL_TAGS.map((link, i) => (
                         <p
-                            key={i + NAVIGATION_LINKSS.length}
+                            key={i + PROMOTIONAL_TAGS.length}
                             className="navigation-link"
                         >
                             {link.name}
