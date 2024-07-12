@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 export default function Browser() {
     return (
         <div className="w-[88vw] h-[80vw] max-h-[800px] border border-border-primary wrapper bg-background-secondary rounded-xl backdrop-blur-md relative">
-            <div className="flex items-center justify-between p-2 border-b border-border-primary">
+            <div className="flex items-center justify-between p-2 lg:px-4 border-b border-border-primary">
                 <div className="flex space-x-1 lg:space-x-2 ">
                     <div className=" h-2.5 lg:h-3 w-2.5 lg:w-3 bg-red-500/90 rounded-full" />
                     <div className=" h-2.5 lg:h-3 w-2.5 lg:w-3 bg-yellow-500/90 rounded-full" />
