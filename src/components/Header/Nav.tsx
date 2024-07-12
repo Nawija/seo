@@ -35,7 +35,12 @@ export default function Nav() {
             }`}
         >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
-                <Logo closeMenu={closeMenu} h={25} w={25}  />
+                <Logo
+                    closeMenu={closeMenu}
+                    h={25}
+                    w={25}
+                    isScrolled={isScrolled}
+                />
                 <BurgerMenu
                     handleShowMenu={handleShowMenu}
                     showMenu={showMenu}

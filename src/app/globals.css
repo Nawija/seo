@@ -18,6 +18,27 @@
     white-space: nowrap;
 }
 
+@keyframes fadeOutLeft {
+  0% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+}
+
+.letter {
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-out {
+  animation: fadeOutLeft 0.5s forwards;
+}
+
+
 /* Kluczowa animacja */
 @keyframes scroll {
     0% {
