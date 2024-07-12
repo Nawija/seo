@@ -1,4 +1,5 @@
 import AutoCarouselInfoHero from "@/components/AutoCarouselInfoHero";
+import Browser from "@/components/Browser";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { SecondBtn } from "@/components/Buttons/SecondBtn";
 import H1 from "@/components/Titles/H1";
@@ -19,6 +20,7 @@ export default function Home() {
                     <SecondBtn>Wycena</SecondBtn>
                 </div>
                 <AutoCarouselInfoHero />
+                <Browser />
                 <div className="h-[300vh]" />
             </section>
         </div>
