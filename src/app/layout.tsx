@@ -3,7 +3,7 @@ import "./globals.css";
 
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer/Footer";
-import { roboto } from "@/fonts";
+import { roboto } from "../../fonts";
 
 export const metadata: Metadata = {
     title: "Seovileo",

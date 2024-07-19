@@ -35,11 +35,8 @@ export default function Nav() {
             }`}
         >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
-                <Logo
-                    closeMenu={closeMenu}
-                    h={25}
-                    w={25}
-                />
+                <Logo closeMenu={closeMenu} h={25} w={25} />
+
                 <BurgerMenu
                     handleShowMenu={handleShowMenu}
                     showMenu={showMenu}
@@ -77,8 +74,11 @@ export default function Nav() {
 function ButtonsNav() {
     return (
         <>
-            <MainBtn>Galeria</MainBtn>
-            <SecondBtn>Wycena</SecondBtn>
+            <MainBtn>Gallery</MainBtn>
+            <SecondBtn>Quote</SecondBtn>
+            <SecondBtn className="text-xs text-foreground-secondary hover:text-foreground-primary p-1">
+                EN
+            </SecondBtn>
         </>
     );
 }

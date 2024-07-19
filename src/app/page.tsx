@@ -18,8 +18,8 @@ export default function Home() {
                         mollitia!
                     </p>
                     <div className="flex items-center justify-center space-x-2">
-                        <MainBtn>Grafika</MainBtn>
-                        <SecondBtn>Wycena</SecondBtn>
+                        <MainBtn>Gallery</MainBtn>
+                        <SecondBtn>Show More</SecondBtn>
                     </div>
                 </div>
                 <AutoCarouselInfoHero />
