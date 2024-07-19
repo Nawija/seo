@@ -3,11 +3,10 @@ import Browser from "@/components/Browser";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { SecondBtn } from "@/components/Buttons/SecondBtn";
 import H1 from "@/components/Titles/H1";
-import Link from "next/link";
 
 export default function Home() {
     return (
-        <div className="anim-opacity pt-12 lg:pt-20">
+        <div className="anim-opacity pt-12 lg:pt-20 relative w-full h-full">
             <section className="space-y-12 lg:space-y-20">
                 <div className="space-y-6">
                     <H1>Lorem ipsum is placeholder Seovileo Commonly</H1>

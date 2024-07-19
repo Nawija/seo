@@ -68,6 +68,20 @@
     }
 }
 
+.bgAnim {
+  max-width: 1536px;
+  margin: 0 auto;
+  animation: bgAnim 0.6s;
+}
+@keyframes bgAnim {
+  0% {
+  }
+  100% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {
