@@ -39,7 +39,6 @@ export default function Nav() {
                     closeMenu={closeMenu}
                     h={25}
                     w={25}
-                    isScrolled={isScrolled}
                 />
                 <BurgerMenu
                     handleShowMenu={handleShowMenu}
