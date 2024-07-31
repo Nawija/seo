@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { FaCopy } from "react-icons/fa6";
-import { SecondBtn } from "./SecondBtn";
 import { MdDone } from "react-icons/md";
 
 export default function CopyToClipboard({
@@ -22,11 +21,17 @@ export default function CopyToClipboard({
     };
 
     return (
-        <SecondBtn
+        <button
             onClick={copyToClipboard}
-            className="flex items-center justify-center ml-2 px-1"
+            className={
+                "relative rounded-lg border border-border-primary bg-background-secondary p-1.5 opacity-80 mx-2 text-xs lg:text-sm font-medium transition-colors text-foreground-primary hover:text-foreground-secondary"
+            }
         >
-            {copied ? <MdDone className="scale-75" size={16} /> : <FaCopy className="scale-75" size={16} />}
-        </SecondBtn>
+            {copied ? (
+                <MdDone size={13} className="text-green-300" />
+            ) : (
+                <FaCopy size={13} />
+            )}
+        </button>
     );
 }

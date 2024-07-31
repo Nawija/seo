@@ -46,7 +46,7 @@ export default function Nav() {
                         showMenu
                             ? "translate-x-0"
                             : " -translate-x-full lg:translate-x-0"
-                    } absolute lg:static border-b lg:translate-x-1/3 lg:border-none border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:p-0 w-full flex items-center justify-center flex-col lg:flex-row bg-background-primary`}
+                    } absolute lg:static border-b lg:translate-x-1/3 border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:py-1 w-full flex items-center lg:border lg:bg-background-secondary lg:px-3 lg:rounded-xl justify-center flex-col lg:flex-row bg-background-primary`}
                 >
                     {NAVIGATION_LINKS.map((link, index) => (
                         <li key={index}>
@@ -76,9 +76,6 @@ function ButtonsNav() {
         <>
             <MainBtn>Gallery</MainBtn>
             <SecondBtn>Quote</SecondBtn>
-            <SecondBtn className="text-xs text-foreground-secondary hover:text-foreground-primary p-1">
-                EN
-            </SecondBtn>
         </>
     );
 }
