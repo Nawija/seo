@@ -39,6 +39,7 @@ export default function page() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 px-2 pb-12">
                 {SERVICES.map((service) => (
                     <Link
+                        key={service.name}
                         href={service.href}
                         className="p-10 flex items-start justify-start border border-border-primary hover:border-orange-200 transition-colors rounded-xl flex-col relative"
                     >
@@ -83,7 +84,11 @@ export default function page() {
                         </p>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Accusamus reiciendis accusantium totam Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic iure, labore sapiente ea, assumenda magnam maxime officiis consectetur, quod maiores excepturi laudantium. Possimus.
+                            elit. Accusamus reiciendis accusantium totam Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit.
+                            Hic iure, labore sapiente ea, assumenda magnam
+                            maxime officiis consectetur, quod maiores excepturi
+                            laudantium. Possimus.
                         </p>
                         <div className="flex items-center justify-start space-x-2">
                             <MainBtn>Info</MainBtn>
