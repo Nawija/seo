@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Header/Nav";
 import Footer from "@/components/Footer/Footer";
 import { roboto } from "../../fonts";
+import Background from "@/components/Background";
 
 export const metadata: Metadata = {
     title: "Seovileo",
@@ -21,6 +22,7 @@ export default function RootLayout({
                 className={`${roboto.className} bg-background-primary flex flex-col min-h-screen text-foreground-secondary w-full overflow-x-hidden`}
             >
                 <Nav />
+                <Background />
                 <main className="flex-1">{children}</main>
                 <Footer />
             </body>

@@ -54,8 +54,8 @@ export default function page() {
                 ))}
             </div>
             <div className="px-4 py-6 lg:py-10 max-w-screen-lg mx-auto">
-                <div className="flex items-start justify-between pb-12">
-                    <p className="text-foreground-primary lg:text-xl">
+                <div className="flex items-center justify-center flex-col lg:flex-row text-center space-y-4 lg:space-y-0 lg:items-start lg:justify-between pb-6 lg:pb-12">
+                    <p className="text-foreground-primary text-xl lg:text-2xl">
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit.
                     </p>
