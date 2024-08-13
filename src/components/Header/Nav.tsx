@@ -30,8 +30,10 @@ export default function Nav() {
     }
     return (
         <header
-            className={`w-full z-[998]  border-b transition-colors duration-300 sticky top-0 ${
-                isScrolled ? "border-border-primary backdrop-blur-lg bg-black/30" : "border-transparent"
+            className={`w-full z-[998] border-b transition-colors duration-300 sticky top-0 ${
+                isScrolled || showMenu
+                    ? "border-border-primary backdrop-blur-md bg-background-primary"
+                    : "border-transparent"
             }`}
         >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
@@ -53,7 +55,7 @@ export default function Nav() {
                             <Link
                                 href={link.href}
                                 onClick={closeMenu}
-                                className="capitalize font-medium text-sm hover:text-foreground-primary transition-colors"
+                                className="capitalize font-medium text-lg lg:text-sm hover:text-foreground-primary transition-colors"
                             >
                                 {link.name}
                             </Link>

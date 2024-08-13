@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
+import { useRouter } from "next/navigation";
 import InputField from "./InputField";
 import { NeonBtn } from "@/components/Buttons/NeonBtn";
 
@@ -43,11 +43,9 @@ export default function ContactForm() {
                 setStatus("Message sent successfully!");
                 setStatusType("success"); // Set status type to success
                 setFormData({ name: "", email: "", message: "" });
-
-                // Redirect to /success page
                 setTimeout(() => {
                     router.push("/success");
-                }, 1000); // Redirect after 1 second to allow status message to be seen
+                }, 1000);
             } else {
                 setStatus("Failed to send message.");
                 setStatusType("error"); // Set status type to error
