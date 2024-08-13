@@ -31,7 +31,7 @@ export default function Nav() {
     return (
         <header
             className={`w-full z-[998]  border-b transition-colors duration-300 sticky top-0 ${
-                isScrolled ? "border-border-primary bg-background-primary" : "border-transparent"
+                isScrolled ? "border-border-primary backdrop-blur-lg bg-black/30" : "border-transparent"
             }`}
         >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
@@ -46,7 +46,7 @@ export default function Nav() {
                         showMenu
                             ? "translate-x-0"
                             : " -translate-x-full lg:translate-x-0"
-                    } absolute lg:static border-b lg:translate-x-1/3 border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:py-1 w-full flex items-center lg:border lg:bg-background-secondary lg:px-3 lg:rounded-xl justify-center flex-col lg:flex-row bg-background-primary`}
+                    } absolute border-b lg:-translate-x-1/2 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 border-border-primary transition-transform top-full left-0 space-y-4 lg:space-y-0 lg:space-x-4 lg:w-max p-10 lg:py-1 w-full flex items-center lg:border lg:bg-background-secondary lg:px-3 lg:rounded-xl justify-center flex-col lg:flex-row bg-background-primary`}
                 >
                     {NAVIGATION_LINKS.map((link, index) => (
                         <li key={index}>

@@ -8,7 +8,7 @@ import H1 from "@/components/Titles/H1";
 export default function Home() {
     return (
         <div className="anim-opacity pt-12 lg:pt-20 relative w-full h-full">
-            <section className="space-y-12 lg:space-y-20 relative">
+            <section className="space-y-16 lg:space-y-24 relative">
                 <div className="space-y-6">
                     <H1>Lorem ipsum is placeholder Seovileo Commonly</H1>
                     <p className="text-foreground-secondary font text-sm lg:text-lg max-w-screen-md mx-auto text-center px-3">
