@@ -2,14 +2,14 @@
     color: #a36c1a;
     transition: 0.5s;
     overflow: hidden;
-    animation: anim 5s infinite;
+    animation: anim 3s infinite alternate-reverse;
 }
 @keyframes anim {
     0% {
         filter: hue-rotate(0deg);
     }
     100% {
-        filter: hue-rotate(250deg);
+        filter: hue-rotate(50deg);
     }
 }
 .xx:hover {
