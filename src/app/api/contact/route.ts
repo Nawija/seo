@@ -4,7 +4,6 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
     const { name, email, message } = await request.json();
 
-    // Konfiguracja Nodemailer
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -16,14 +15,17 @@ export async function POST(request: Request) {
     const mailOptions = {
         from: email,
         to: "seovileo@gmail.com",
-        subject: `New Contact Form Submission from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        subject: `${name} -- ${email}`,
+        text: `${name}\n${email}\n\n\n${message}`,
     };
 
     try {
         await transporter.sendMail(mailOptions);
         return NextResponse.json({ success: "Email sent successfully" });
     } catch (error) {
-        return NextResponse.json({ error: "Error sending email" }, { status: 500 });
+        return NextResponse.json(
+            { error: "Error sending email" },
+            { status: 500 }
+        );
     }
 }
