@@ -1,8 +1,6 @@
 "use client";
-
 import { useState } from "react";
 import InputField from "./InputField";
-import { NeonBtn } from "@/components/Buttons/NeonBtn";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -10,6 +8,7 @@ export default function ContactForm() {
         email: "",
         message: "",
     });
+    const [status, setStatus] = useState<null | string>(null);
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,10 +17,28 @@ export default function ContactForm() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Handle form submission, e.g., send data to API
-        console.log("Form Data: ", formData);
+        setStatus("Sending...");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus("Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                setStatus("Failed to send message.");
+            }
+        } catch (error) {
+            setStatus("Failed to send message.");
+        }
     };
 
     return (
@@ -50,13 +67,19 @@ export default function ContactForm() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="border border-border-primary rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-black"
+                    className="border border-border-primary rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={formData.message}
                     onChange={handleChange}
                     required
                 />
             </div>
-            <NeonBtn type="submit">Send Message</NeonBtn>
+            <button
+                type="submit"
+                className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+            >
+                Send Message
+            </button>
+            {status && <p className="mt-4 text-sm">{status}</p>}
         </form>
     );
 }

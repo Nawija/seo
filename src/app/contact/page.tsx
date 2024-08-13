@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 export default function ContactSection() {
     return (
         <section
-            className="py-16 px-4 text-foreground-primary"
+            className="py-16 px-4 text-foreground-primary anim-opacity"
             id="contact"
         >
             <div className="max-w-screen-lg mx-auto">
