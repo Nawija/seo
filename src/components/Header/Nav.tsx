@@ -30,8 +30,8 @@ export default function Nav() {
     }
     return (
         <header
-            className={`w-full z-[998] bg-background-primary border-b  transition-colors duration-300 sticky top-0 ${
-                isScrolled ? "border-border-primary" : "border-transparent"
+            className={`w-full z-[998]  border-b transition-colors duration-300 sticky top-0 ${
+                isScrolled ? "border-border-primary bg-background-primary" : "border-transparent"
             }`}
         >
             <nav className="max-w-screen-2xl mx-auto py-4 px-6 flex items-center justify-between">
