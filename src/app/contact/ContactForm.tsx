@@ -94,7 +94,7 @@ export default function ContactForm() {
             {status && (
                 <div className="mt-4 text-sm flex items-center space-x-2">
                     {loading && (
-                        <div className="w-4 h-4 border-2 border-t-transparent border-emerald-600 border-solid rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 border-2 border-t-transparent border-emerald-600 border-solid rounded-full animate-spin" />
                     )}
                     <p
                         className={`ml-2 ${
