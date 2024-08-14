@@ -34,7 +34,7 @@ export default function SelectField({
                     <option
                         key={index}
                         value={option}
-                        className="text-white bg-black focus:bg-emerald-600 hover:bg-emerald-600"
+                        className="focus:bg-emerald-600 hover:bg-emerald-600"
                     >
                         {option}
                     </option>

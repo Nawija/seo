@@ -7,7 +7,7 @@ import CheckboxField from "./CheckboxField";
 import TextareaField from "./TextareaField";
 import { useRouter } from "next/navigation";
 import { SecondBtn } from "@/components/Buttons/SecondBtn";
-import { MainBtn } from "@/components/Buttons/MainBtn";
+import "./Anim.css";
 
 export default function QuoteForm() {
     const [formData, setFormData] = useState({
@@ -87,105 +87,118 @@ export default function QuoteForm() {
     };
 
     return (
-        <form
-            onSubmit={handleSubmit}
-            className="space-y-4 max-w-screen-md mx-auto py-24 anim-opacity"
-        >
-            <InputField
-                label="Name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                required
-            />
-            <InputField
-                label="Email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-            />
-            <SelectField
-                label="Type of Website"
-                name="type"
-                options={["Landing Page", "Shop", "Portfolio", "Blog", "Other"]}
-                value={formData.type}
-                onChange={handleChange}
-                required
-            />
-            <div className="space-y-2">
-                <p className="font-medium">Features Required:</p>
-                <CheckboxField
-                    label="Responsive Design"
-                    name="Responsive Design"
-                    checked={formData.features.includes("Responsive Design")}
-                    onChange={handleCheckboxChange}
+        <>
+            <h1 className="text-4xl text-white font-semibold tracking-wider py-8 text-center animate-pulse lg:py-24">
+                Free Quote
+            </h1>
+            <form
+                onSubmit={handleSubmit}
+                className="space-y-4 max-w-screen-md anim-bg-y-100 mx-auto px-6 pb-12 anim-opacity"
+            >
+                <InputField
+                    label="Name"
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                 />
-                <CheckboxField
-                    label="SEO Optimization"
-                    name="SEO Optimization"
-                    checked={formData.features.includes("SEO Optimization")}
-                    onChange={handleCheckboxChange}
+                <InputField
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                 />
-                <CheckboxField
-                    label="E-commerce Functionality"
-                    name="E-commerce Functionality"
-                    checked={formData.features.includes(
-                        "E-commerce Functionality"
-                    )}
-                    onChange={handleCheckboxChange}
+                <SelectField
+                    label="Type of Website"
+                    name="type"
+                    options={[
+                        "Landing Page",
+                        "Shop",
+                        "Portfolio",
+                        "Blog",
+                        "Other",
+                    ]}
+                    value={formData.type}
+                    onChange={handleChange}
+                    required
                 />
-                <CheckboxField
-                    label="Contact Form"
-                    name="Contact Form"
-                    checked={formData.features.includes("Contact Form")}
-                    onChange={handleCheckboxChange}
-                />
-                <CheckboxField
-                    label="CMS Integration"
-                    name="CMS Integration"
-                    checked={formData.features.includes("CMS Integration")}
-                    onChange={handleCheckboxChange}
-                />
-            </div>
-            <InputField
-                label="Estimated Budget"
-                name="budget"
-                type="text"
-                value={formData.budget}
-                onChange={handleChange}
-                required
-            />
-            <TextareaField
-                label="Additional Information"
-                name="additionalInfo"
-                value={formData.additionalInfo}
-                onChange={handleChange}
-            />
-            <SecondBtn type="submit">
-                {status ? (
-                    <div className="text-sm flex items-center space-x-2">
-                        {loading && (
-                            <div className="w-4 h-4 border-2 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+                <div className="space-y-2">
+                    <p className="font-medium">Features Required:</p>
+                    <CheckboxField
+                        label="Responsive Design"
+                        name="Responsive Design"
+                        checked={formData.features.includes(
+                            "Responsive Design"
                         )}
-                        <p
-                            className={`ml-2 ${
-                                statusType === "success"
-                                    ? "text-green-500"
-                                    : statusType === "error"
-                                    ? "text-red-500"
-                                    : "text-white"
-                            }`}
-                        >
-                            {status}
-                        </p>
-                    </div>
-                ) : (
-                    <span>Send Quote Request</span>
-                )}
-            </SecondBtn>
-        </form>
+                        onChange={handleCheckboxChange}
+                    />
+                    <CheckboxField
+                        label="SEO Optimization"
+                        name="SEO Optimization"
+                        checked={formData.features.includes("SEO Optimization")}
+                        onChange={handleCheckboxChange}
+                    />
+                    <CheckboxField
+                        label="E-commerce Functionality"
+                        name="E-commerce Functionality"
+                        checked={formData.features.includes(
+                            "E-commerce Functionality"
+                        )}
+                        onChange={handleCheckboxChange}
+                    />
+                    <CheckboxField
+                        label="Contact Form"
+                        name="Contact Form"
+                        checked={formData.features.includes("Contact Form")}
+                        onChange={handleCheckboxChange}
+                    />
+                    <CheckboxField
+                        label="CMS Integration"
+                        name="CMS Integration"
+                        checked={formData.features.includes("CMS Integration")}
+                        onChange={handleCheckboxChange}
+                    />
+                </div>
+                <InputField
+                    label="Estimated Budget"
+                    name="budget"
+                    type="text"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    required
+                />
+                <TextareaField
+                    label="Additional Information"
+                    name="additionalInfo"
+                    value={formData.additionalInfo}
+                    onChange={handleChange}
+                />
+                <SecondBtn type="submit">
+                    {status ? (
+                        <div className="text-sm flex items-center space-x-2">
+                            {loading && (
+                                <div className="w-4 h-4 border-2 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+                            )}
+                            <p
+                                className={`ml-2 ${
+                                    statusType === "success"
+                                        ? "text-green-500"
+                                        : statusType === "error"
+                                        ? "text-red-500"
+                                        : "text-white"
+                                }`}
+                            >
+                                {status}
+                            </p>
+                        </div>
+                    ) : (
+                        <span>Send Quote Request</span>
+                    )}
+                </SecondBtn>
+            </form>
+        </>
     );
 }
