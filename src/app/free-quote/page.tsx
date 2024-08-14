@@ -164,25 +164,28 @@ export default function QuoteForm() {
                 value={formData.additionalInfo}
                 onChange={handleChange}
             />
-            <SecondBtn type="submit">Send Quote Request</SecondBtn>
-            {status && (
-                <div className="mt-4 text-sm flex items-center space-x-2">
-                    {loading && (
-                        <div className="w-4 h-4 border-2 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
-                    )}
-                    <p
-                        className={`ml-2 ${
-                            statusType === "success"
-                                ? "text-green-500"
-                                : statusType === "error"
-                                ? "text-red-500"
-                                : "text-white"
-                        }`}
-                    >
-                        {status}
-                    </p>
-                </div>
-            )}
+            <SecondBtn type="submit">
+                {status ? (
+                    <div className="text-sm flex items-center space-x-2">
+                        {loading && (
+                            <div className="w-4 h-4 border-2 border-t-transparent border-blue-500 border-solid rounded-full animate-spin"></div>
+                        )}
+                        <p
+                            className={`ml-2 ${
+                                statusType === "success"
+                                    ? "text-green-500"
+                                    : statusType === "error"
+                                    ? "text-red-500"
+                                    : "text-white"
+                            }`}
+                        >
+                            {status}
+                        </p>
+                    </div>
+                ) : (
+                    <span>Send Quote Request</span>
+                )}
+            </SecondBtn>
         </form>
     );
 }
