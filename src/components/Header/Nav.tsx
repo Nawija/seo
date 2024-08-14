@@ -77,7 +77,9 @@ function ButtonsNav() {
     return (
         <>
             <MainBtn>Gallery</MainBtn>
-            <SecondBtn>Quote</SecondBtn>
+            <Link href="/free-quote">
+                <SecondBtn>Free Quote</SecondBtn>
+            </Link>
         </>
     );
 }
