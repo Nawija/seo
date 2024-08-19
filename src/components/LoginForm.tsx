@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { NeonBtn } from "./Buttons/NeonBtn";
+import { FormInput } from "./FormInput";
 
 export default function LoginForm() {
     const [email, setEmail] = useState("");
@@ -31,14 +32,14 @@ export default function LoginForm() {
             onSubmit={handleLogin}
             className="flex items-center justify-center flex-col space-y-4 mt-6 lg:mt-12"
         >
-            <input
+            <FormInput
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 required
             />
-            <input
+            <FormInput
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

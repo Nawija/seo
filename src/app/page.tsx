@@ -9,7 +9,7 @@ export default async function Home() {
     const session = await getSession();
 
     if (!session) {
-        return <p>Access Denied. Please login.</p>;
+        return <p className="text-center text-3xl py-24">Access Denied. Please login.</p>;
     }
     return (
         <div className="anim-opacity pt-12 lg:pt-20 relative w-full h-full">

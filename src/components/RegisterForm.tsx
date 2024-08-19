@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { MainBtn } from "./Buttons/MainBtn";
+import { NeonBtn } from "./Buttons/NeonBtn";
+import Link from "next/link";
+import { FormInput } from "./FormInput";
 
 export default function RegisterForm() {
     const [email, setEmail] = useState("");
@@ -48,9 +51,7 @@ export default function RegisterForm() {
                 body: JSON.stringify({ email, code }),
             });
             const data = await res.json();
-            console.log(data);
-
-            router.push("/login");
+            setStep(3);
         } else {
             setIsCodeValid(false); // Podświetlenie pola na czerwono
             setError("The code does not match the one sent to your email!");
@@ -64,14 +65,14 @@ export default function RegisterForm() {
                     onSubmit={handleRegister}
                     className="flex items-center justify-center flex-col space-y-4 mt-6 lg:mt-12"
                 >
-                    <input
+                    <FormInput
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Email"
                         required
                     />
-                    <input
+                    <FormInput
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -88,7 +89,7 @@ export default function RegisterForm() {
                     onSubmit={handleVerifyCode}
                     className="flex items-center justify-center flex-col space-y-4 mt-6 lg:mt-12 anim-opacity"
                 >
-                    <input
+                    <FormInput
                         type="text"
                         value={code}
                         onChange={(e) => {
@@ -97,13 +98,21 @@ export default function RegisterForm() {
                         }}
                         placeholder="Verification Code"
                         required
-                        style={{
-                            borderColor: isCodeValid ? "initial" : "red", // Dynamiczne podświetlenie
-                        }}
                     />
                     {error && <p style={{ color: "red" }}>{error}</p>}
                     <MainBtn type="submit">Verify Code</MainBtn>
                 </form>
+            )}
+            {step === 3 && (
+                <div className="flex items-center justify-center flex-col space-y-4 mt-6 lg:mt-12 anim-opacity">
+                    <p className="text-3xl lg:text-5xl text-green-600 font-bold">
+                        Sukcess
+                    </p>
+
+                    <Link href="/login">
+                        <NeonBtn type="submit">Go to login</NeonBtn>
+                    </Link>
+                </div>
             )}
         </div>
     );
