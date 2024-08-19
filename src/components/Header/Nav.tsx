@@ -76,7 +76,14 @@ export default function Nav() {
 function ButtonsNav() {
     return (
         <>
-            <MainBtn>Gallery</MainBtn>
+            <Link href="/login">
+                <MainBtn>Login</MainBtn>
+            </Link>
+
+            <Link href="/register">
+                <SecondBtn>Register</SecondBtn>
+            </Link>
+
             <Link href="/free-quote">
                 <SecondBtn>Free Quote</SecondBtn>
             </Link>
