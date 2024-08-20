@@ -2,6 +2,7 @@ import AutoCarouselInfoHero from "@/components/AutoCarouselInfoHero";
 import Browser from "@/components/Browser";
 import { MainBtn } from "@/components/Buttons/MainBtn";
 import { NeonBtn } from "@/components/Buttons/NeonBtn";
+import SubscribeNewsletter from "@/components/Newsletter/SubscribeNewsletter";
 import H1 from "@/components/Titles/H1";
 
 export default async function Home() {
@@ -23,6 +24,11 @@ export default async function Home() {
                 </div>
                 <AutoCarouselInfoHero />
                 <Browser />
+
+                <div className="max-w-screen-md mx-auto">
+                    <p>Zapisz sie do naszego newslettera aby dostac kupon -400zł</p>
+                    <SubscribeNewsletter />
+                </div>
             </section>
         </div>
     );

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { MainBtn } from "./Buttons/MainBtn";
 import { NeonBtn } from "./Buttons/NeonBtn";
 import Link from "next/link";
 import { FormInput } from "./FormInput";
