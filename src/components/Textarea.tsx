@@ -1,25 +1,26 @@
-interface FormInputProps {
+interface TextareaProps {
     type: string;
     value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     placeholder?: string;
     required?: boolean;
+    rows?: number;
 }
 
-export const FormInput: React.FC<FormInputProps> = ({
-    type,
+export const Textarea: React.FC<TextareaProps> = ({
     value,
     onChange,
     placeholder,
     required = false,
+    rows,
 }) => {
     return (
-        <input
-            type={type}
+        <textarea
             value={value}
             onChange={onChange}
             placeholder={placeholder}
             required={required}
+            rows={rows}
             className="py-2 px-4 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-emerald-600 w-full"
         />
     );

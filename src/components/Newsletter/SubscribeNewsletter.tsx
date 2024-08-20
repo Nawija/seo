@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MainBtn } from "../Buttons/MainBtn";
+import { FormInput } from "../FormInput";
 
 export default function SubscribeNewsletter() {
     const [email, setEmail] = useState("");
@@ -28,13 +29,12 @@ export default function SubscribeNewsletter() {
     return (
         <form onSubmit={handleSubscribe} className="space-y-4">
             <h2 className="text-xl font-semibold">Zapisz się do newslettera</h2>
-            <input
+            <FormInput
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Twój e-mail"
                 required
-                className="border p-2 rounded w-full"
             />
             {status && (
                 <MainBtn
