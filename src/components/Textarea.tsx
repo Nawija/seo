@@ -1,5 +1,4 @@
 interface TextareaProps {
-    type: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     placeholder?: string;
