@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.anim-y {
+    animation: anim-y 0.3s;
+}
+@keyframes anim-y {
+    from {
+        transform: translateY(140%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .scroll-container {
     display: flex;
     white-space: nowrap;

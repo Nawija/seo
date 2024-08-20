@@ -6,6 +6,7 @@ import { MainBtn } from "./Buttons/MainBtn";
 import { NeonBtn } from "./Buttons/NeonBtn";
 import Link from "next/link";
 import { FormInput } from "./FormInput";
+import { SecondBtn } from "./Buttons/SecondBtn";
 
 export default function RegisterForm() {
     const [email, setEmail] = useState("");
@@ -13,12 +14,14 @@ export default function RegisterForm() {
     const [code, setCode] = useState("");
     const [step, setStep] = useState(1); // 1: Rejestracja, 2: Weryfikacja kodu
     const [error, setError] = useState(""); // Do przechowywania błędów
-    const [isCodeValid, setIsCodeValid] = useState(true); // Do dynamicznego podświetlenia pola kodu
     const [sentCode, setSentCode] = useState<number | null>(null); // Przechowywanie kodu wysłanego na e-mail
-    const router = useRouter();
+    const [status, setStatus] = useState<null | string>(null);
+    const [loading, setLoading] = useState(false);
 
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
+        setStatus("Sending...");
+        setLoading(true);
 
         const res = await fetch("/api/register", {
             method: "POST",
@@ -31,6 +34,7 @@ export default function RegisterForm() {
         const data = await res.json();
 
         if (res.ok) {
+            setStatus("Enter Code");
             setSentCode(data.code); // Przechowywanie wysłanego kodu
             setStep(2);
         } else {
@@ -53,8 +57,7 @@ export default function RegisterForm() {
             const data = await res.json();
             setStep(3);
         } else {
-            setIsCodeValid(false); // Podświetlenie pola na czerwono
-            setError("The code does not match the one sent to your email!");
+            setError("Wrong Code!");
         }
     };
 
@@ -80,7 +83,18 @@ export default function RegisterForm() {
                         required
                     />
                     {error && <p style={{ color: "red" }}>{error}</p>}
-                    <MainBtn type="submit">Register</MainBtn>
+                    <SecondBtn type="submit">
+                        {status ? (
+                            <div className="text-sm flex items-center space-x-2">
+                                {loading && (
+                                    <div className="w-4 h-4 border-2 border-t-transparent border-emerald-600 border-solid rounded-full animate-spin"></div>
+                                )}
+                                <p className={`ml-2`}>{status}</p>
+                            </div>
+                        ) : (
+                            <span>Register</span>
+                        )}
+                    </SecondBtn>
                 </form>
             )}
 
@@ -89,18 +103,23 @@ export default function RegisterForm() {
                     onSubmit={handleVerifyCode}
                     className="flex items-center justify-center flex-col space-y-4 mt-6 lg:mt-12 anim-opacity"
                 >
-                    <FormInput
-                        type="text"
-                        value={code}
-                        onChange={(e) => {
-                            setCode(e.target.value);
-                            setIsCodeValid(true); // Resetowanie podświetlenia
-                        }}
-                        placeholder="Verification Code"
-                        required
-                    />
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-                    <MainBtn type="submit">Verify Code</MainBtn>
+                    <div className="relative">
+                        <FormInput
+                            type="text"
+                            value={code}
+                            onChange={(e) => {
+                                setCode(e.target.value);
+                            }}
+                            placeholder="Verification Code"
+                            required
+                        />
+                        {error && (
+                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 -z-10">
+                                <p className="text-red-500 anim-y ">{error}</p>
+                            </div>
+                        )}
+                    </div>
+                    <SecondBtn type="submit">Verify Code</SecondBtn>
                 </form>
             )}
             {step === 3 && (

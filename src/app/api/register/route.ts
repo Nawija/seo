@@ -39,7 +39,12 @@ export async function POST(request: Request) {
         from: "your-email@gmail.com",
         to: email,
         subject: "Your Verification Code",
-        text: `Your verification code is: ${verificationCode}`,
+        html: `
+       <div style="text-align: center; margin: 0 auto;">
+        <p style="font-size: 24px;">Your verification code is:</p>
+        <p style="font-size: 24px; color: #275728; padding: 14px; border:2px solid #cfcfcf; width: max-content; margin: 0 auto; border-radius: 14px; letter-spacing: 2px; ">${verificationCode}</p>
+       </div>
+    `,
     };
 
     await transporter.sendMail(mailOptions);
