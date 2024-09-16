@@ -136,7 +136,7 @@ const Home: React.FC = () => {
 
     return (
         <div className="flex anim-opacity flex-col relative items-center py-10 justify-center overflow-hidden">
-            <GameOverScreen score={score} running={running} />
+            {/* <GameOverScreen score={score} running={running} /> */}
             <GameArea
                 snake={snake}
                 food={food}

@@ -18,12 +18,12 @@ const Board: React.FC<BoardProps> = ({
     boardSize,
 }) => {
     return (
-        <div className="relative w-full bg-gray-900 overflow-hidden h-full">
+        <div className="relative w-full bg-background-primary border border-border-primary overflow-hidden h-full">
             {Array.from({ length: boardSize }).map((_, row) =>
                 Array.from({ length: boardSize }).map((_, col) => (
                     <div
                         key={`${row}-${col}`}
-                        className={`absolute border border-gray-700`}
+                        className={`absolute border`}
                         style={{
                             top: `${(100 / boardSize) * row}%`,
                             left: `${(100 / boardSize) * col}%`,
