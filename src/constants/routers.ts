@@ -1,6 +1,8 @@
 export const NAVIGATION_LINKS = [
-    { name: "services", href: "/services" },
-    { name: "about", href: "/about" },
+    { name: "usługi", href: "/uslugi" },
+    { name: "o mnie", href: "/o-mnie" },
+    { name: "galeria", href: "/galeria" },
     { name: "projekty", href: "/projekty" },
-    { name: "contact", href: "/contact" },
+    { name: "programy", href: "/programy" },
+    { name: "kontact", href: "/kontact" },
 ];
