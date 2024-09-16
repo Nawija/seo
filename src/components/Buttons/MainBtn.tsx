@@ -9,7 +9,7 @@ export function MainBtn({ children, className, ...rest }: ButtonProps) {
         <button
             {...rest}
             className={clsx(
-                "relative rounded-lg bg-accent-primary px-4 py-2 text-sm font-medium transition-colors text-background-primary",
+                "relative rounded-lg bg-accent-primary px-4 py-2 text-sm font-medium transition-colors text-foreground-primary",
                 className
             )}
         >
