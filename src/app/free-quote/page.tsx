@@ -88,7 +88,7 @@ export default function QuoteForm() {
 
     return (
         <>
-            <h1 className="text-4xl text-white font-semibold tracking-wider py-8 text-center animate-pulse lg:py-24">
+            <h1 className="text-4xl text-foreground-primary font-semibold tracking-wider py-8 text-center animate-pulse lg:py-24">
                 Free Quote
             </h1>
             <form
