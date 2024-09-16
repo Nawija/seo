@@ -25,9 +25,19 @@ export default async function Home() {
                 <AutoCarouselInfoHero />
                 <Browser />
 
-                <div className="max-w-screen-md mx-auto">
-                    <p>Zapisz sie do naszego newslettera aby dostac kupon -400zł</p>
-                    <SubscribeNewsletter />
+                <div className="bg-accent-secondary w-full p-12">
+                    <div className="max-w-screen-md mx-auto">
+                        <h3 className="text-2xl font-bold">
+                            Zapisz sie do naszego newslettera
+                        </h3>
+                        <p className="text-xl font-medium py-2">
+                            zdobądz kupon
+                            <span className="text-xl ml-2 font-bold text-background-secondary">
+                                -400zł
+                            </span>
+                        </p>
+                        <SubscribeNewsletter />
+                    </div>
                 </div>
             </section>
         </div>

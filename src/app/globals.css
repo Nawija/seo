@@ -90,8 +90,8 @@
     --foreground-primary: #1a1919;
     --foreground-secondary: #292525;
 
-    --accent-primary: #ffffff;
-    --accent-secondary: #61563c;
+    --accent-primary: #b17824;
+    --accent-secondary: rgb(178, 187, 164);
 
     --border-primary: #ffffff;
     --border-secondary: #ebebeb;

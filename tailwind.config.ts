@@ -19,11 +19,11 @@ const config: Config = {
                 },
                 accent: {
                     primary: `var(--accent-primary)`,
-                    secondary: `var(--accent-primary)`,
+                    secondary: `var(--accent-secondary)`,
                 },
                 border: {
                     primary: `var(--border-primary)`,
-                    secondary: `var(--border-primary)`,
+                    secondary: `var(--border-secondary)`,
                 },
             },
         },

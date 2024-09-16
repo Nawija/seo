@@ -28,7 +28,6 @@ export default function SubscribeNewsletter() {
     };
     return (
         <form onSubmit={handleSubscribe} className="space-y-4">
-            <h2 className="text-xl font-semibold">Zapisz się do newslettera</h2>
             <FormInput
                 type="email"
                 value={email}
